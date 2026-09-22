@@ -1,0 +1,41 @@
+# Las opciones declaradas en un Kconfig.projbuild aparecen en el nivel superior
+# del menu de configuracion, junto a las de ESP-IDF, y no dentro del submenu de
+# configuracion de componentes. Se convierten en macros CONFIG_... disponibles
+# desde el codigo.
+
+menu "SEyTR - Primer proyecto"
+
+    config SEYTR_VENTANA
+        int "Lecturas por ventana"
+        range 2 24
+        default 6
+        help
+            Cuantas lecturas entran en cada resumen. Si el valor no divide al
+            numero de lecturas disponibles, la ultima ventana queda incompleta
+            y el programa lo dice.
+
+    config SEYTR_PERIODO_MS
+        int "Tiempo entre resumenes, en milisegundos"
+        range 100 10000
+        default 2000
+        help
+            Pausa entre un resumen y el siguiente.
+
+    config SEYTR_UMBRAL_CM
+        int "Umbral de aviso, en centimetros"
+        range 1 500
+        default 40
+        help
+            Si el minimo de una ventana baja de este valor, el programa emite
+            un aviso.
+
+    config SEYTR_FALLO_PROVOCADO
+        bool "Provocar un fallo al terminar"
+        default n
+        help
+            Solo para la clase. Al terminar los resumenes, el programa escribe
+            en una direccion invalida y el chip imprime un volcado de fallo.
+            Sirve para practicar la lectura de la pila de llamadas. Dejalo
+            desactivado si no es eso lo que quieres.
+
+endmenu

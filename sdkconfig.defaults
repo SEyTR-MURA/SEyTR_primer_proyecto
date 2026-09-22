@@ -1,0 +1,16 @@
+# Valores de partida del proyecto. Este fichero se escribe a mano y se versiona;
+# sdkconfig lo genera la herramienta y no se versiona.
+
+# Sin esto, el destino de compilacion por omision no es el de la asignatura.
+CONFIG_IDF_TARGET="esp32s3"
+
+# El nivel por omision es el que se ve en el monitor.
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y
+
+# El nivel maximo es el que se compila. Por omision ESP-IDF iguala el maximo al
+# nivel por omision, y entonces ESP_LOGD y ESP_LOGV no llegan a existir en la
+# imagen. Subiendolo a verbose, las trazas detalladas se compilan y se quedan en
+# la imagen: para verlas basta con subir el nivel por omision, sin escribir ni
+# una traza nueva. Lo que queda por encima del maximo, en cambio, se descarta al
+# compilar y no hay forma de hacerlo aparecer despues.
+CONFIG_LOG_MAXIMUM_LEVEL_VERBOSE=y
