@@ -34,7 +34,7 @@ static const char *TAG = "principal";
  * Es la forma mas corta de comprobar que el codigo que corre en la placa es el
  * tuyo y no el que clonaste.
  * ------------------------------------------------------------------------- */
-static const char *AUTOR = "sin personalizar";
+static const char *AUTOR = "L.S.R.";
 
 /* Lecturas simuladas, en centimetros: un robot que se acerca a un obstaculo.
  * Enteros a proposito, para no depender de como este configurado el formato de
