@@ -14,3 +14,8 @@ CONFIG_LOG_DEFAULT_LEVEL_INFO=y
 # una traza nueva. Lo que queda por encima del maximo, en cambio, se descarta al
 # compilar y no hay forma de hacerlo aparecer despues.
 CONFIG_LOG_MAXIMUM_LEVEL_VERBOSE=y
+
+# Frecuencia del tic del planificador. Con el valor por omision el tic dura
+# 10 ms, y toda espera se cuenta en multiplos de 10 ms; a 1000 Hz el tic dura
+# 1 ms. Es la frecuencia de todos los proyectos de la asignatura.
+CONFIG_FREERTOS_HZ=1000
